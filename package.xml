@@ -18,17 +18,19 @@ objects containing all the information from the validator.</description>
   <active>yes</active>
  </lead>
  <date>2007-11-23</date>
- <time>17:59:44</time>
+ <time>18:33:26</time>
  <version>
-  <release>0.2.0</release>
-  <api>0.2.0</api>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
  </version>
  <stability>
-  <release>beta</release>
-  <api>beta</api>
+  <release>alpha</release>
+  <api>alpha</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
- <notes>Applied comment on condition votes from :
+ <notes>Since Pepr :
+Phase 1 (2007-10-03) Initial version for PEAR proposal
+Phase 2 (2007-11-20) Applied comment on condition votes from :
 - Christian Weiske : @since and @access phpdoc tags (removed)
 - Till Klampaeckel : add a bit of setters and getters
 - David Coallier : add a bit of setters and getters instead of only using setOptions
@@ -38,7 +40,7 @@ addError() and addWarning() methods added into Services_W3C_CSSValidator_Respons
   <dir baseinstalldir="Services/W3C" name="/">
    <file baseinstalldir="Services/W3C" md5sum="867f63ba766ab9e898b34eac8e4961d9" name="CSSValidator/Error.php" role="php" />
    <file baseinstalldir="Services/W3C" md5sum="949478b37c460d6a20bd694ef2d0a674" name="CSSValidator/Message.php" role="php" />
-   <file baseinstalldir="Services/W3C" md5sum="18efbc941cd2d79622eef01615d09782" name="CSSValidator/Response.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="2bbd35d5eeb6ad972c66a691ef2c8e7c" name="CSSValidator/Response.php" role="php" />
    <file baseinstalldir="Services/W3C" md5sum="ec2f0082ee85f01c59f47a51238051d3" name="CSSValidator/Warning.php" role="php" />
    <file baseinstalldir="Services/W3C" md5sum="1af29a53af607224e6839ab74983de55" name="docs/examples/foo.css" role="doc" />
    <file baseinstalldir="Services/W3C" md5sum="1af29a53af607224e6839ab74983de55" name="docs/examples/fragment.css" role="doc" />
@@ -49,8 +51,8 @@ addError() and addWarning() methods added into Services_W3C_CSSValidator_Respons
    <file baseinstalldir="Services/W3C" md5sum="2e50f9c96b8ec2e077724bda440239b4" name="docs/examples/validate_fragment.php" role="doc" />
    <file baseinstalldir="Services/W3C" md5sum="1b35366a7a5afacf9547a1a5ffe943ee" name="tests/AllTests.php" role="test" />
    <file baseinstalldir="Services/W3C" md5sum="1af29a53af607224e6839ab74983de55" name="tests/fragment.css" role="test" />
-   <file baseinstalldir="Services/W3C" md5sum="8bc571229e6adbed8f59f7225af6573d" name="tests/Services_W3C_CSSValidatorTest.php" role="test" />
-   <file baseinstalldir="Services/W3C" md5sum="82441ef5833f3dfb0f6e3a7c65e113dc" name="CSSValidator.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="3eceaae0adc35a89d03d159bea055986" name="tests/Services_W3C_CSSValidatorTest.php" role="test" />
+   <file baseinstalldir="Services/W3C" md5sum="58765ba160575740dc6e4b3236925b20" name="CSSValidator.php" role="php" />
   </dir>
  </contents>
  <dependencies>
@@ -59,7 +61,7 @@ addError() and addWarning() methods added into Services_W3C_CSSValidator_Respons
     <min>5.0.0</min>
    </php>
    <pearinstaller>
-    <min>1.4.3</min>
+    <min>1.5.4</min>
    </pearinstaller>
    <package>
     <name>HTTP_Request</name>
@@ -72,34 +74,23 @@ addError() and addWarning() methods added into Services_W3C_CSSValidator_Respons
  <changelog>
   <release>
    <version>
-    <release>0.2.0</release>
-    <api>0.2.0</api>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
    </version>
    <stability>
-    <release>beta</release>
-    <api>beta</api>
+    <release>alpha</release>
+    <api>alpha</api>
    </stability>
    <date>2007-11-23</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-   <notes>Applied comment on condition votes from :
+   <notes>Since Pepr :
+Phase 1 (2007-10-03) Initial version for PEAR proposal
+Phase 2 (2007-11-20) Applied comment on condition votes from :
 - Christian Weiske : @since and @access phpdoc tags (removed)
 - Till Klampaeckel : add a bit of setters and getters
 - David Coallier : add a bit of setters and getters instead of only using setOptions
 class properties are now protected rather than public
 addError() and addWarning() methods added into Services_W3C_CSSValidator_Response</notes>
-  </release>
-  <release>
-   <version>
-    <release>0.1.0</release>
-    <api>0.1.0</api>
-   </version>
-   <stability>
-    <release>beta</release>
-    <api>beta</api>
-   </stability>
-   <date>2007-10-03</date>
-   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-   <notes>Initial version for PEAR proposal</notes>
   </release>
  </changelog>
 </package>
