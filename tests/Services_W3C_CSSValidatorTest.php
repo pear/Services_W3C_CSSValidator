@@ -75,12 +75,12 @@ class Services_W3C_CSSValidatorTest extends PHPUnit_Framework_TestCase
      */
     public function testSetOptions()
     {
-        $v                = new Services_W3C_CSSValidator();
-        $v->uri           = 'foo';
-        $v->validator_uri = 'bar';
+        $v          = new Services_W3C_CSSValidator();
+        $v->uri     = 'foo';
+        $v->profile = 'css2';
         // Test that value was set.
         $this->assertEquals($v->uri, 'foo');
-        $this->assertEquals($v->validator_uri, 'bar');
+        $this->assertEquals($v->profile, 'css2');
     }
 
     /**
@@ -96,8 +96,10 @@ class Services_W3C_CSSValidatorTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(get_class($r), 'Services_W3C_CSSValidator_Response');
         $this->assertTrue($r->isValid());
         $this->assertEquals(count($r->errors), 0);
+        $this->assertEquals($v->uri, $uri);
         $this->assertEquals($r->uri, $uri);
-        $this->assertEquals($r->checkedby.'validator', $v->validator_uri);
+        $this->assertEquals($r->checkedby.'validator',
+            Services_W3C_CSSValidator::VALIDATOR_URI);
     }
 
     /**

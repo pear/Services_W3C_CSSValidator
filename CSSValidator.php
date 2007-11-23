@@ -143,10 +143,9 @@ class Services_W3C_CSSValidator
      *        Default value is 'en', and value could one of these :
      *        en, fr, ja, es, zh-cn, nl, de
      *
-     * @var   array
+     * @var    array
      */
-    protected $options = array('output' => 'soap12', 'warning' => '1',
-        'profile' => 'css21', 'usermedium' => 'all', 'lang' => 'en');
+    protected $options;
 
     /**
      * HTTP_Request object.
@@ -162,6 +161,8 @@ class Services_W3C_CSSValidator
      */
     public function __construct()
     {
+        $this->options = array('output' => 'soap12', 'warning' => '1',
+            'profile' => 'css21', 'usermedium' => 'all', 'lang' => 'en');
     }
 
     /**
@@ -174,8 +175,15 @@ class Services_W3C_CSSValidator
      */
     public function __set($option, $val)
     {
+        // properties that can be set directly
+        static $setting_allowed = array('uri');
+
         if (isset($this->options[$option])) {
             $this->options[$option] = $val;
+        } elseif (property_exists($this, $option)) {
+            if (in_array($option, $setting_allowed)) {
+                $this->$option = $val;
+            }
         }
     }
 
@@ -188,10 +196,16 @@ class Services_W3C_CSSValidator
      */
     public function __get($option)
     {
+        // properties that can be get directly
+        static $getting_allowed = array('uri');
+
+        $r = null;
         if (isset($this->options[$option])) {
             $r = $this->options[$option];
-        } else {
-            $r = null;
+        } elseif (property_exists($this, $option)) {
+            if (in_array($option, $getting_allowed)) {
+                $r = $this->$option;
+            }
         }
         return $r;
     }
@@ -303,11 +317,12 @@ class Services_W3C_CSSValidator
 
         $options = array('output', 'warning', 'profile', 'usermedium', 'lang');
         foreach ($options as $option) {
-            if (isset($this->$option)) {
-                if (is_bool($this->$option)) {
-                    $this->request->$method($option, intval($this->$option));
+            if (isset($this->options[$option])) {
+                if (is_bool($this->options[$option])) {
+                    $this->request->$method($option,
+                        intval($this->options[$option]));
                 } else {
-                    $this->request->$method($option, $this->$option);
+                    $this->request->$method($option, $this->options[$option]);
                 }
             }
         }
@@ -364,14 +379,14 @@ class Services_W3C_CSSValidator
             if (!$response->validity) {
                 $errors = $doc->getElementsByTagName('error');
                 foreach ($errors as $error) {
-                    $response->addError
-                        = new Services_W3C_CSSValidator_Error($error);
+                    $response->addError(new
+                        Services_W3C_CSSValidator_Error($error));
                 }
             }
             $warnings = $doc->getElementsByTagName('warning');
             foreach ($warnings as $warning) {
-                    $response->addWarning
-                        = new Services_W3C_CSSValidator_Warning($warning);
+                    $response->addWarning(new
+                        Services_W3C_CSSValidator_Warning($warning));
             }
             return $response;
         } else {
