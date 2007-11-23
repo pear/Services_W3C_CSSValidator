@@ -119,7 +119,6 @@ class Services_W3C_CSSValidator_Response
      * @param object $error instance of Services_W3C_CSSValidator_Error class
      *
      * @return void
-     * @since  0.2.0
      */
     public function addError($error)
     {
@@ -134,7 +133,6 @@ class Services_W3C_CSSValidator_Response
      * @param object $warning instance of Services_W3C_CSSValidator_Warning class
      *
      * @return void
-     * @since  0.2.0
      */
     public function addWarning($warning)
     {
