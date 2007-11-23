@@ -1,0 +1,8 @@
+ul.man-side_top,
+ul.man-side_up,
+ul.man-side_download {
+    margin-top: 0.5e;
+    margin-bottom: 0.5em;
+    margin-left: 0.7em;
+    padding-left: 0.7em;
+}
