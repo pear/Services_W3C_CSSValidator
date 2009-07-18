@@ -20,7 +20,6 @@ if (!defined('PHPUnit_MAIN_METHOD')) {
 require_once 'PHPUnit/Framework/TestSuite.php';
 require_once 'PHPUnit/TextUI/TestRunner.php';
 
-chdir(dirname(__FILE__));
 
 require_once 'Services_W3C_CSSValidatorTest.php';
 
