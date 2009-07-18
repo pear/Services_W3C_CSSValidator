@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.6.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.8.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
  <name>Services_W3C_CSSValidator</name>
  <channel>pear.php.net</channel>
  <summary>An Object Oriented Interface to the W3C CSS Validator service.</summary>
@@ -17,8 +17,8 @@ objects containing all the information from the validator.</description>
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2007-11-23</date>
- <time>18:33:26</time>
+ <date>2009-07-18</date>
+ <time>21:45:43</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
@@ -28,31 +28,33 @@ objects containing all the information from the validator.</description>
   <api>alpha</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
- <notes>Since Pepr :
+ <notes>
+Since Pepr :
 Phase 1 (2007-10-03) Initial version for PEAR proposal
 Phase 2 (2007-11-20) Applied comment on condition votes from :
 - Christian Weiske : @since and @access phpdoc tags (removed)
 - Till Klampaeckel : add a bit of setters and getters
 - David Coallier : add a bit of setters and getters instead of only using setOptions
 class properties are now protected rather than public
-addError() and addWarning() methods added into Services_W3C_CSSValidator_Response</notes>
+addError() and addWarning() methods added into Services_W3C_CSSValidator_Response
+ </notes>
  <contents>
   <dir baseinstalldir="Services/W3C" name="/">
-   <file baseinstalldir="Services/W3C" md5sum="867f63ba766ab9e898b34eac8e4961d9" name="CSSValidator/Error.php" role="php" />
-   <file baseinstalldir="Services/W3C" md5sum="949478b37c460d6a20bd694ef2d0a674" name="CSSValidator/Message.php" role="php" />
-   <file baseinstalldir="Services/W3C" md5sum="2bbd35d5eeb6ad972c66a691ef2c8e7c" name="CSSValidator/Response.php" role="php" />
-   <file baseinstalldir="Services/W3C" md5sum="ec2f0082ee85f01c59f47a51238051d3" name="CSSValidator/Warning.php" role="php" />
-   <file baseinstalldir="Services/W3C" md5sum="1af29a53af607224e6839ab74983de55" name="docs/examples/foo.css" role="doc" />
-   <file baseinstalldir="Services/W3C" md5sum="1af29a53af607224e6839ab74983de55" name="docs/examples/fragment.css" role="doc" />
-   <file baseinstalldir="Services/W3C" md5sum="222b2cb087c4936f783abb0d566ab99a" name="docs/examples/pear_manual.css" role="doc" />
-   <file baseinstalldir="Services/W3C" md5sum="a29e74c9038d67e7ffae4ef6cd868312" name="docs/examples/validate_atrules.php" role="doc" />
-   <file baseinstalldir="Services/W3C" md5sum="cdd68a599f7bc056b1e5f758765ef3ba" name="docs/examples/validate_byfile.php" role="doc" />
-   <file baseinstalldir="Services/W3C" md5sum="ac03216bbebc29e0c045ad175fdbe057" name="docs/examples/validate_byuri.php" role="doc" />
-   <file baseinstalldir="Services/W3C" md5sum="2e50f9c96b8ec2e077724bda440239b4" name="docs/examples/validate_fragment.php" role="doc" />
-   <file baseinstalldir="Services/W3C" md5sum="1b35366a7a5afacf9547a1a5ffe943ee" name="tests/AllTests.php" role="test" />
-   <file baseinstalldir="Services/W3C" md5sum="1af29a53af607224e6839ab74983de55" name="tests/fragment.css" role="test" />
-   <file baseinstalldir="Services/W3C" md5sum="3eceaae0adc35a89d03d159bea055986" name="tests/Services_W3C_CSSValidatorTest.php" role="test" />
-   <file baseinstalldir="Services/W3C" md5sum="58765ba160575740dc6e4b3236925b20" name="CSSValidator.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="4793a23a47546bdd5a5d1c47a34c6293" name="docs/examples/foo.css" role="doc" />
+   <file baseinstalldir="Services/W3C" md5sum="4793a23a47546bdd5a5d1c47a34c6293" name="docs/examples/fragment.css" role="doc" />
+   <file baseinstalldir="Services/W3C" md5sum="3354a77f10c651bad6ee0c2ca6a74114" name="docs/examples/pear_manual.css" role="doc" />
+   <file baseinstalldir="Services/W3C" md5sum="c0483637c42ef9a916162f5db6e1f55a" name="docs/examples/validate_atrules.php" role="doc" />
+   <file baseinstalldir="Services/W3C" md5sum="df58e77b49da9fbb545e546eb1a00c13" name="docs/examples/validate_byfile.php" role="doc" />
+   <file baseinstalldir="Services/W3C" md5sum="083e2b729e4c5e12ad1ccc3ecda72e08" name="docs/examples/validate_byuri.php" role="doc" />
+   <file baseinstalldir="Services/W3C" md5sum="5cc0331e7f08330c53f5303545b83e09" name="docs/examples/validate_fragment.php" role="doc" />
+   <file baseinstalldir="Services/W3C" md5sum="257bbddc32f5430c0dbab0a457d0d610" name="Services/W3C/CSSValidator.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="c1b95d380d70cd438e4b8cc8a2f15f50" name="Services/W3C/CSSValidator/Error.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="d2a832c4dfdbd44f1b90219610f3bd22" name="Services/W3C/CSSValidator/Message.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="404393e6e4d246ac6d44eac529400c32" name="Services/W3C/CSSValidator/Response.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="8973ce69e0fc93e36dc8ec83224aa524" name="Services/W3C/CSSValidator/Warning.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="1bf5da1b8c9531b5aa33fa1d79326296" name="tests/AllTests.php" role="test" />
+   <file baseinstalldir="Services/W3C" md5sum="4793a23a47546bdd5a5d1c47a34c6293" name="tests/fragment.css" role="test" />
+   <file baseinstalldir="Services/W3C" md5sum="db9a7620c2ff4d74a6d708aabec1b087" name="tests/Services_W3C_CSSValidatorTest.php" role="test" />
   </dir>
  </contents>
  <dependencies>
@@ -81,16 +83,18 @@ addError() and addWarning() methods added into Services_W3C_CSSValidator_Respons
     <release>alpha</release>
     <api>alpha</api>
    </stability>
-   <date>2007-11-23</date>
+   <date>2009-07-18</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-   <notes>Since Pepr :
+   <notes>
+Since Pepr :
 Phase 1 (2007-10-03) Initial version for PEAR proposal
 Phase 2 (2007-11-20) Applied comment on condition votes from :
 - Christian Weiske : @since and @access phpdoc tags (removed)
 - Till Klampaeckel : add a bit of setters and getters
 - David Coallier : add a bit of setters and getters instead of only using setOptions
 class properties are now protected rather than public
-addError() and addWarning() methods added into Services_W3C_CSSValidator_Response</notes>
+addError() and addWarning() methods added into Services_W3C_CSSValidator_Response
+   </notes>
   </release>
  </changelog>
 </package>
