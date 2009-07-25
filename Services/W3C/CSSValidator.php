@@ -40,7 +40,7 @@
  * @since    File available since Release 0.1.0
  */
 
-require_once 'HTTP/Request.php';
+require_once 'HTTP/Request2.php';
 
 require_once 'Services/W3C/CSSValidator/Response.php';
 require_once 'Services/W3C/CSSValidator/Error.php';
@@ -148,7 +148,7 @@ class Services_W3C_CSSValidator
     protected $options;
 
     /**
-     * HTTP_Request object.
+     * HTTP_Request2 object.
      *
      * @var    object
      */
@@ -226,9 +226,8 @@ class Services_W3C_CSSValidator
     {
         $this->uri = $uri;
         $this->buildRequest('uri');
-        if ($this->sendRequest()) {
-            return Services_W3C_CSSValidator::parseSOAP12Response($this
-                ->request->getResponseBody());
+        if ($response = $this->sendRequest()) {
+            return $this->parseSOAP12Response($response->getBody());
         } else {
             return false;
         }
@@ -251,9 +250,8 @@ class Services_W3C_CSSValidator
         if (file_exists($file)) {
             $this->uploaded_file = $file;
             $this->buildRequest('file'); //return $this->request;
-            if ($this->sendRequest()) {
-                return Services_W3C_CSSValidator::parseSOAP12Response($this
-                    ->request->getResponseBody());
+            if ($response = $this->sendRequest()) {
+                return $this->parseSOAP12Response($response->getBody());
             } else {
                 return false;
             }
@@ -275,9 +273,8 @@ class Services_W3C_CSSValidator
     {
         $this->fragment = $css;
         $this->buildRequest('fragment');
-        if ($this->sendRequest()) {
-            return Services_W3C_CSSValidator::parseSOAP12Response($this
-                ->request->getResponseBody());
+        if ($response = $this->sendRequest()) {
+            return $this->parseSOAP12Response($response->getBody());
         } else {
             return false;
         }
@@ -292,26 +289,27 @@ class Services_W3C_CSSValidator
      */
     protected function buildRequest($type = 'uri')
     {
-        $this->request = new HTTP_Request();
+        $this->request = new HTTP_Request2();
         $this->request->setURL(self::VALIDATOR_URI);
         switch ($type) {
         case 'uri':
         default:
-            $this->request->setMethod(HTTP_REQUEST_METHOD_GET);
-            $this->request->addQueryString('uri', $this->uri);
-            $method = 'addQueryString';
+            $this->request->setMethod(HTTP_Request2::METHOD_GET);
+            $this->setQueryVariable('uri', $this->uri);
+            $method = 'setQueryVariable';
             break;
         case 'file':
-            $this->request->setMethod(HTTP_REQUEST_METHOD_POST);
-            $this->request->addFile('file',
+            $this->request->setMethod(HTTP_Request2::METHOD_POST);
+            $this->request->addUpload('file',
                                      $this->uploaded_file,
+                                     null,
                                      'text/css');
-            $method = 'addPostData';
+            $method = 'addPostParameter';
             break;
         case 'fragment':
-            $this->request->setMethod(HTTP_REQUEST_METHOD_GET);
-            $this->request->addQueryString('text', $this->fragment);
-            $method = 'addQueryString';
+            $this->request->setMethod(HTTP_Request2::METHOD_GET);
+            $this->setQueryVariable('text', $this->fragment);
+            $method = 'setQueryVariable';
             break;
         }
 
@@ -322,11 +320,40 @@ class Services_W3C_CSSValidator
                     $this->request->$method($option,
                         intval($this->options[$option]));
                 } else {
-                    $this->request->$method($option, $this->options[$option]);
+                    $this->$method($option, $this->options[$option]);
                 }
             }
         }
     }
+
+    /**
+     * Set a querystring variable for the request
+     * 
+     * @param string $name  Name of the querystring parameter
+     * @param mixed  $value Value of the parameter
+     * 
+     * @return void
+     */
+    protected function setQueryVariable($name, $value = '')
+    {
+        $url =& $this->request->getURL();
+        $url->setQueryVariable($name, $value);
+        $this->request->setURL($url);
+    }
+    
+    /**
+     * Add post data to the request
+     * 
+     * @param string $name  Name of the post field
+     * @param mixed  $value Value of the field
+     * 
+     * @return void
+     */
+    protected function addPostParameter($name, $value = '')
+    {
+        $this->request->addPostParameter($name, $value);
+    }
+    
 
     /**
      * Actually sends the request to the CSS Validator service
@@ -335,10 +362,10 @@ class Services_W3C_CSSValidator
      */
     protected function sendRequest()
     {
-        if (PEAR::isError($this->request->sendRequest())) {
-            return false;
-        } else {
-            return true;
+        try {
+            return $this->request->send();
+        } catch (Exception $e) {
+            throw new Exception('Error sending request', null, $e);
         }
     }
 
