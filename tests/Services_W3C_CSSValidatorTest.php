@@ -90,7 +90,7 @@ class Services_W3C_CSSValidatorTest extends PHPUnit_Framework_TestCase
      */
     public function testValidateUri()
     {
-        $uri = 'http://pear.php.net/';
+        $uri = 'http://validator.w3.org/';
         $v   = new Services_W3C_CSSValidator();
         $r   = $v->validateUri($uri);
         $this->assertEquals(get_class($r), 'Services_W3C_CSSValidator_Response');
