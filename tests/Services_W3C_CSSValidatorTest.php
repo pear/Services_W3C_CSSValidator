@@ -18,6 +18,7 @@ if (!defined("PHPUnit_MAIN_METHOD")) {
 
 require_once "PHPUnit/Framework/TestCase.php";
 require_once "PHPUnit/Framework/TestSuite.php";
+require_once "HTTP/Request2/Adapter/Mock.php";
 
 require_once 'Services/W3C/CSSValidator.php';
 
@@ -56,6 +57,12 @@ class Services_W3C_CSSValidatorTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
+        $this->mock = new HTTP_Request2_Adapter_Mock();
+
+        $request = new HTTP_Request2();
+        $request->setAdapter($this->mock);
+
+        $this->validator = new Services_W3C_CSSValidator($request);
     }
 
     /**
@@ -90,9 +97,15 @@ class Services_W3C_CSSValidatorTest extends PHPUnit_Framework_TestCase
      */
     public function testValidateUri()
     {
+        $response = new HTTP_Request2_Response('HTTP/1.1 200 OK');
+        $response->appendBody(file_get_contents(dirname(__FILE__) . '/data/ValidateUri.xml'));
+
+        $this->mock->addResponse($response);
+
         $uri = 'http://validator.w3.org/';
-        $v   = new Services_W3C_CSSValidator();
-        $r   = $v->validateUri($uri);
+
+        $v = $this->validator;
+        $r = $v->validateUri($uri);
         $this->assertEquals(get_class($r), 'Services_W3C_CSSValidator_Response');
         $this->assertTrue($r->isValid());
         $this->assertEquals(count($r->errors), 0);
@@ -109,7 +122,12 @@ class Services_W3C_CSSValidatorTest extends PHPUnit_Framework_TestCase
      */
     public function testValidateFile()
     {
-        $v       = new Services_W3C_CSSValidator();
+        $response = new HTTP_Request2_Response('HTTP/1.1 200 OK');
+        $response->appendBody(file_get_contents(dirname(__FILE__) . '/data/ValidateFile.xml'));
+
+        $this->mock->addResponse($response);
+
+        $v       = $this->validator;
         $doc_dir = dirname(realpath(__FILE__));
         $file    = DIRECTORY_SEPARATOR . 'fragment.css';
         $r       = $v->validateFile($doc_dir.$file);
@@ -127,7 +145,12 @@ class Services_W3C_CSSValidatorTest extends PHPUnit_Framework_TestCase
      */
     public function testValidateFragment()
     {
-        $v = new Services_W3C_CSSValidator();
+        $response = new HTTP_Request2_Response('HTTP/1.1 200 OK');
+        $response->appendBody(file_get_contents(dirname(__FILE__) . '/data/ValidateFragment.xml'));
+
+        $this->mock->addResponse($response);
+
+        $v = $this->validator;
         $r = $v->validateFragment('ul.man-side_top,
 ul.man-side_up,
 ul.man-side_download {

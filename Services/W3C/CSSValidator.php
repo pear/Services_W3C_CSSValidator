@@ -159,10 +159,16 @@ class Services_W3C_CSSValidator
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(HTTP_Request2 $request = null)
     {
         $this->options = array('output' => 'soap12', 'warning' => '1',
             'profile' => 'css21', 'usermedium' => 'all', 'lang' => 'en');
+
+        if (empty($request)) {
+            $request = new HTTP_Request2();
+        }
+
+        $this->request = $request;
     }
 
     /**
@@ -176,7 +182,7 @@ class Services_W3C_CSSValidator
     public function __set($option, $val)
     {
         // properties that can be set directly
-        static $setting_allowed = array('uri');
+        $setting_allowed = array('uri');
 
         if (isset($this->options[$option])) {
             $this->options[$option] = $val;
@@ -197,7 +203,7 @@ class Services_W3C_CSSValidator
     public function __get($option)
     {
         // properties that can be get directly
-        static $getting_allowed = array('uri');
+        $getting_allowed = array('uri');
 
         $r = null;
         if (isset($this->options[$option])) {
@@ -289,7 +295,6 @@ class Services_W3C_CSSValidator
      */
     protected function buildRequest($type = 'uri')
     {
-        $this->request = new HTTP_Request2();
         $this->request->setURL(self::VALIDATOR_URI);
         switch ($type) {
         case 'uri':
@@ -380,7 +385,7 @@ class Services_W3C_CSSValidator
      *                      if parsing soap12 response successfully,
      *               boolean FALSE otherwise
      */
-    protected static function parseSOAP12Response($xml)
+    protected function parseSOAP12Response($xml)
     {
         $doc = new DOMDocument();
         // try to load soap 1.2 xml response, and suppress warning reports if any
