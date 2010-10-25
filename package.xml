@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.8.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
  <name>Services_W3C_CSSValidator</name>
  <channel>pear.php.net</channel>
  <summary>An Object Oriented Interface to the W3C CSS Validator service.</summary>
@@ -17,10 +17,10 @@ objects containing all the information from the validator.</description>
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2009-07-25</date>
- <time>15:55:15</time>
+ <date>2010-10-25</date>
+ <time>23:22:21</time>
  <version>
-  <release>0.2.0</release>
+  <release>0.2.1</release>
   <api>0.2.0</api>
  </version>
  <stability>
@@ -29,7 +29,10 @@ objects containing all the information from the validator.</description>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
  <notes>
-Swapped to HTTP_Request2
+Automatically built QA release
+Bug #15674 testValidateUri() is broken - doconnor
+
+Req #16473 Change to HTTP_Request2 - doconnor
  </notes>
  <contents>
   <dir baseinstalldir="Services/W3C" name="/">
@@ -40,14 +43,17 @@ Swapped to HTTP_Request2
    <file baseinstalldir="Services/W3C" md5sum="df58e77b49da9fbb545e546eb1a00c13" name="docs/examples/validate_byfile.php" role="doc" />
    <file baseinstalldir="Services/W3C" md5sum="083e2b729e4c5e12ad1ccc3ecda72e08" name="docs/examples/validate_byuri.php" role="doc" />
    <file baseinstalldir="Services/W3C" md5sum="5cc0331e7f08330c53f5303545b83e09" name="docs/examples/validate_fragment.php" role="doc" />
-   <file baseinstalldir="Services/W3C" md5sum="208105556c1c6491318a844d13247ba0" name="Services/W3C/CSSValidator.php" role="php" />
-   <file baseinstalldir="Services/W3C" md5sum="c1b95d380d70cd438e4b8cc8a2f15f50" name="Services/W3C/CSSValidator/Error.php" role="php" />
-   <file baseinstalldir="Services/W3C" md5sum="d2a832c4dfdbd44f1b90219610f3bd22" name="Services/W3C/CSSValidator/Message.php" role="php" />
-   <file baseinstalldir="Services/W3C" md5sum="404393e6e4d246ac6d44eac529400c32" name="Services/W3C/CSSValidator/Response.php" role="php" />
-   <file baseinstalldir="Services/W3C" md5sum="8973ce69e0fc93e36dc8ec83224aa524" name="Services/W3C/CSSValidator/Warning.php" role="php" />
-   <file baseinstalldir="Services/W3C" md5sum="1bf5da1b8c9531b5aa33fa1d79326296" name="tests/AllTests.php" role="test" />
+   <file baseinstalldir="Services/W3C" md5sum="b846639fe1068d4037a5f116bedef90d" name="Services/W3C/CSSValidator.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="03bb385624d61c1ce8083539457dd6d9" name="Services/W3C/CSSValidator/Error.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="e2db683d47f7ba3695a54d7af6a7ec70" name="Services/W3C/CSSValidator/Message.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="9d6ad6baf44abf9333d442834ef9d652" name="Services/W3C/CSSValidator/Response.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="975cef9287934a60fcdd1b6aae710c74" name="Services/W3C/CSSValidator/Warning.php" role="php" />
+   <file baseinstalldir="Services/W3C" md5sum="bf2705abc40e04e43ed368648a820773" name="tests/AllTests.php" role="test" />
    <file baseinstalldir="Services/W3C" md5sum="4793a23a47546bdd5a5d1c47a34c6293" name="tests/fragment.css" role="test" />
-   <file baseinstalldir="Services/W3C" md5sum="53c5d20374ce03ef85e64fbef33baa62" name="tests/Services_W3C_CSSValidatorTest.php" role="test" />
+   <file baseinstalldir="Services/W3C" md5sum="d44142391e8071db2187f28fe44d6d7c" name="tests/Services_W3C_CSSValidatorTest.php" role="test" />
+   <file baseinstalldir="Services/W3C" md5sum="5f828cb218b2f46ed65c72e8a30c41a8" name="tests/data/ValidateFile.xml" role="test" />
+   <file baseinstalldir="Services/W3C" md5sum="9ca23ec10bbad99bbf6fc48af6894144" name="tests/data/ValidateFragment.xml" role="test" />
+   <file baseinstalldir="Services/W3C" md5sum="2af0eda991f9f1c7980314b41c7fffed" name="tests/data/ValidateUri.xml" role="test" />
   </dir>
  </contents>
  <dependencies>
@@ -102,6 +108,24 @@ addError() and addWarning() methods added into Services_W3C_CSSValidator_Respons
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
    <notes>
 Swapped to HTTP_Request2
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.2.1</release>
+    <api>0.2.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2010-10-25</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+   <notes>
+Automatically built QA release
+Bug #15674 testValidateUri() is broken - doconnor
+
+Req #16473 Change to HTTP_Request2 - doconnor
    </notes>
   </release>
  </changelog>
