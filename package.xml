@@ -17,8 +17,8 @@ objects containing all the information from the validator.</description>
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2010-10-25</date>
- <time>23:22:21</time>
+ <date>2010-10-26</date>
+ <time>07:08:52</time>
  <version>
   <release>0.2.1</release>
   <api>0.2.0</api>
@@ -29,31 +29,29 @@ objects containing all the information from the validator.</description>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
  <notes>
-Automatically built QA release
-Bug #15674 testValidateUri() is broken - doconnor
-
-Req #16473 Change to HTTP_Request2 - doconnor
+QA release
+Bug #17998 	Installed into wrong path
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file  md5sum="4793a23a47546bdd5a5d1c47a34c6293" name="docs/examples/foo.css" role="doc" />
-   <file  md5sum="4793a23a47546bdd5a5d1c47a34c6293" name="docs/examples/fragment.css" role="doc" />
-   <file  md5sum="3354a77f10c651bad6ee0c2ca6a74114" name="docs/examples/pear_manual.css" role="doc" />
-   <file  md5sum="c0483637c42ef9a916162f5db6e1f55a" name="docs/examples/validate_atrules.php" role="doc" />
-   <file  md5sum="df58e77b49da9fbb545e546eb1a00c13" name="docs/examples/validate_byfile.php" role="doc" />
-   <file  md5sum="083e2b729e4c5e12ad1ccc3ecda72e08" name="docs/examples/validate_byuri.php" role="doc" />
-   <file  md5sum="5cc0331e7f08330c53f5303545b83e09" name="docs/examples/validate_fragment.php" role="doc" />
-   <file  md5sum="b846639fe1068d4037a5f116bedef90d" name="Services/W3C/CSSValidator.php" role="php" />
-   <file  md5sum="03bb385624d61c1ce8083539457dd6d9" name="Services/W3C/CSSValidator/Error.php" role="php" />
-   <file  md5sum="e2db683d47f7ba3695a54d7af6a7ec70" name="Services/W3C/CSSValidator/Message.php" role="php" />
-   <file  md5sum="9d6ad6baf44abf9333d442834ef9d652" name="Services/W3C/CSSValidator/Response.php" role="php" />
-   <file  md5sum="975cef9287934a60fcdd1b6aae710c74" name="Services/W3C/CSSValidator/Warning.php" role="php" />
-   <file  md5sum="bf2705abc40e04e43ed368648a820773" name="tests/AllTests.php" role="test" />
-   <file  md5sum="4793a23a47546bdd5a5d1c47a34c6293" name="tests/fragment.css" role="test" />
-   <file  md5sum="d44142391e8071db2187f28fe44d6d7c" name="tests/Services_W3C_CSSValidatorTest.php" role="test" />
-   <file  md5sum="5f828cb218b2f46ed65c72e8a30c41a8" name="tests/data/ValidateFile.xml" role="test" />
-   <file  md5sum="9ca23ec10bbad99bbf6fc48af6894144" name="tests/data/ValidateFragment.xml" role="test" />
-   <file  md5sum="2af0eda991f9f1c7980314b41c7fffed" name="tests/data/ValidateUri.xml" role="test" />
+   <file baseinstalldir="/" md5sum="1af29a53af607224e6839ab74983de55" name="docs/examples/foo.css" role="doc" />
+   <file baseinstalldir="/" md5sum="1af29a53af607224e6839ab74983de55" name="docs/examples/fragment.css" role="doc" />
+   <file baseinstalldir="/" md5sum="222b2cb087c4936f783abb0d566ab99a" name="docs/examples/pear_manual.css" role="doc" />
+   <file baseinstalldir="/" md5sum="3dcf98d84757d5ee23fa36b28a67794f" name="docs/examples/validate_atrules.php" role="doc" />
+   <file baseinstalldir="/" md5sum="327c08e121722c45930687cf3ed1f11d" name="docs/examples/validate_byfile.php" role="doc" />
+   <file baseinstalldir="/" md5sum="4f5fd34630b220abf7111ff9929a3c0a" name="docs/examples/validate_byuri.php" role="doc" />
+   <file baseinstalldir="/" md5sum="08d10057a61f52338eafb96975f80050" name="docs/examples/validate_fragment.php" role="doc" />
+   <file baseinstalldir="/" md5sum="a189235daaacb03ef79e4aa7a4e1b6f7" name="Services/W3C/CSSValidator.php" role="php" />
+   <file baseinstalldir="/" md5sum="b45aba7569091a772d8d4e236ff3fd14" name="Services/W3C/CSSValidator/Error.php" role="php" />
+   <file baseinstalldir="/" md5sum="64dd8d489aa226dcac2d04098f75b83c" name="Services/W3C/CSSValidator/Message.php" role="php" />
+   <file baseinstalldir="/" md5sum="c163fd793820ffd28ea63b4e8cf9e924" name="Services/W3C/CSSValidator/Response.php" role="php" />
+   <file baseinstalldir="/" md5sum="588443136aa448965451f1e8be600071" name="Services/W3C/CSSValidator/Warning.php" role="php" />
+   <file baseinstalldir="/" md5sum="30bae58954460060d354007d803f41ea" name="tests/AllTests.php" role="test" />
+   <file baseinstalldir="/" md5sum="1af29a53af607224e6839ab74983de55" name="tests/fragment.css" role="test" />
+   <file baseinstalldir="/" md5sum="599ff2c4c793344fb386aa3b9544939a" name="tests/Services_W3C_CSSValidatorTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="5f828cb218b2f46ed65c72e8a30c41a8" name="tests/data/ValidateFile.xml" role="test" />
+   <file baseinstalldir="/" md5sum="9ca23ec10bbad99bbf6fc48af6894144" name="tests/data/ValidateFragment.xml" role="test" />
+   <file baseinstalldir="/" md5sum="2af0eda991f9f1c7980314b41c7fffed" name="tests/data/ValidateUri.xml" role="test" />
   </dir>
  </contents>
  <dependencies>
@@ -119,13 +117,11 @@ Swapped to HTTP_Request2
     <release>alpha</release>
     <api>alpha</api>
    </stability>
-   <date>2010-10-25</date>
+   <date>2010-10-26</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
    <notes>
-Automatically built QA release
-Bug #15674 testValidateUri() is broken - doconnor
-
-Req #16473 Change to HTTP_Request2 - doconnor
+QA release
+Bug #17998 	Installed into wrong path
    </notes>
   </release>
  </changelog>
