@@ -364,13 +364,17 @@ class Services_W3C_CSSValidator
      * Actually sends the request to the CSS Validator service
      *
      * @return bool TRUE if request was sent successfully, FALSE otherwise
+     * @todo   Raise dependency to 5.3.0 all together? (#18082)
      */
     protected function sendRequest()
     {
         try {
             return $this->request->send();
         } catch (Exception $e) {
-            throw new Exception('Error sending request', null, $e);
+            if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
+                throw new Exception('Error sending request', null, $e);
+            }
+            throw new Exception($e->getMessage());
         }
     }
 
