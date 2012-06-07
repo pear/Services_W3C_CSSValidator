@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
  <name>Services_W3C_CSSValidator</name>
  <channel>pear.php.net</channel>
  <summary>An Object Oriented Interface to the W3C CSS Validator service.</summary>
@@ -17,10 +17,10 @@ objects containing all the information from the validator.</description>
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2010-10-26</date>
- <time>07:08:52</time>
+ <date>2012-06-07</date>
+ <time>11:39:12</time>
  <version>
-  <release>0.2.2</release>
+  <release>0.2.3</release>
   <api>0.2.0</api>
  </version>
  <stability>
@@ -30,28 +30,30 @@ objects containing all the information from the validator.</description>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
  <notes>
 QA release
-Bug #17998 	Installed into wrong path
+
+Bug #18082	Wrong parameters for Exception
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="1af29a53af607224e6839ab74983de55" name="docs/examples/foo.css" role="doc" />
-   <file baseinstalldir="/" md5sum="1af29a53af607224e6839ab74983de55" name="docs/examples/fragment.css" role="doc" />
-   <file baseinstalldir="/" md5sum="222b2cb087c4936f783abb0d566ab99a" name="docs/examples/pear_manual.css" role="doc" />
-   <file baseinstalldir="/" md5sum="3dcf98d84757d5ee23fa36b28a67794f" name="docs/examples/validate_atrules.php" role="doc" />
-   <file baseinstalldir="/" md5sum="327c08e121722c45930687cf3ed1f11d" name="docs/examples/validate_byfile.php" role="doc" />
-   <file baseinstalldir="/" md5sum="4f5fd34630b220abf7111ff9929a3c0a" name="docs/examples/validate_byuri.php" role="doc" />
-   <file baseinstalldir="/" md5sum="08d10057a61f52338eafb96975f80050" name="docs/examples/validate_fragment.php" role="doc" />
-   <file baseinstalldir="/" md5sum="a189235daaacb03ef79e4aa7a4e1b6f7" name="Services/W3C/CSSValidator.php" role="php" />
-   <file baseinstalldir="/" md5sum="b45aba7569091a772d8d4e236ff3fd14" name="Services/W3C/CSSValidator/Error.php" role="php" />
-   <file baseinstalldir="/" md5sum="64dd8d489aa226dcac2d04098f75b83c" name="Services/W3C/CSSValidator/Message.php" role="php" />
-   <file baseinstalldir="/" md5sum="c163fd793820ffd28ea63b4e8cf9e924" name="Services/W3C/CSSValidator/Response.php" role="php" />
-   <file baseinstalldir="/" md5sum="588443136aa448965451f1e8be600071" name="Services/W3C/CSSValidator/Warning.php" role="php" />
-   <file baseinstalldir="/" md5sum="30bae58954460060d354007d803f41ea" name="tests/AllTests.php" role="test" />
-   <file baseinstalldir="/" md5sum="1af29a53af607224e6839ab74983de55" name="tests/fragment.css" role="test" />
-   <file baseinstalldir="/" md5sum="599ff2c4c793344fb386aa3b9544939a" name="tests/Services_W3C_CSSValidatorTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="4793a23a47546bdd5a5d1c47a34c6293" name="docs/examples/foo.css" role="doc" />
+   <file baseinstalldir="/" md5sum="4793a23a47546bdd5a5d1c47a34c6293" name="docs/examples/fragment.css" role="doc" />
+   <file baseinstalldir="/" md5sum="3354a77f10c651bad6ee0c2ca6a74114" name="docs/examples/pear_manual.css" role="doc" />
+   <file baseinstalldir="/" md5sum="f128be7bd766f36845c128fdc826e6f4" name="docs/examples/validate_atrules.php" role="doc" />
+   <file baseinstalldir="/" md5sum="819db1193c867d15ee4f0f3926200f8b" name="docs/examples/validate_byfile.php" role="doc" />
+   <file baseinstalldir="/" md5sum="1e3db73afbd7111411a3616fc80663bc" name="docs/examples/validate_byuri.php" role="doc" />
+   <file baseinstalldir="/" md5sum="67596c433ebe7e1a91f6c08a80815042" name="docs/examples/validate_fragment.php" role="doc" />
+   <file baseinstalldir="/" md5sum="67943913a4c6bf5474155014f46a6006" name="Services/W3C/CSSValidator.php" role="php" />
+   <file baseinstalldir="/" md5sum="602a1214ee3c624b06577f9b835bf5dd" name="Services/W3C/CSSValidator/Error.php" role="php" />
+   <file baseinstalldir="/" md5sum="31dea5fb550aad454e6bd6eabcdf53bf" name="Services/W3C/CSSValidator/Message.php" role="php" />
+   <file baseinstalldir="/" md5sum="453b8f6ea54b599e8f2335242c1b07d3" name="Services/W3C/CSSValidator/Response.php" role="php" />
+   <file baseinstalldir="/" md5sum="933e09922857c6160a268a4697a98173" name="Services/W3C/CSSValidator/Warning.php" role="php" />
+   <file baseinstalldir="/" md5sum="1d3e0176e849a01d16ca8cb17b90a1a2" name="tests/AllTests.php" role="test" />
+   <file baseinstalldir="/" md5sum="4793a23a47546bdd5a5d1c47a34c6293" name="tests/fragment.css" role="test" />
+   <file baseinstalldir="/" md5sum="48599b8e072b9828c314f4b6a7a5979b" name="tests/Services_W3C_CSSValidatorTest.php" role="test" />
    <file baseinstalldir="/" md5sum="5f828cb218b2f46ed65c72e8a30c41a8" name="tests/data/ValidateFile.xml" role="test" />
    <file baseinstalldir="/" md5sum="9ca23ec10bbad99bbf6fc48af6894144" name="tests/data/ValidateFragment.xml" role="test" />
    <file baseinstalldir="/" md5sum="2af0eda991f9f1c7980314b41c7fffed" name="tests/data/ValidateUri.xml" role="test" />
+   <file baseinstalldir="/" md5sum="1b7012af5d322782e9900764ac87fce6" name="README" role="data" />
   </dir>
  </contents>
  <dependencies>
@@ -122,6 +124,23 @@ Swapped to HTTP_Request2
    <notes>
 QA release
 Bug #17998 	Installed into wrong path
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.2.3</release>
+    <api>0.2.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2012-06-07</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+   <notes>
+QA release
+
+Bug #18082	Wrong parameters for Exception
    </notes>
   </release>
  </changelog>
