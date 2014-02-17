@@ -1,0 +1,31 @@
+{
+    "authors": [
+        {
+            "email": "pear@laurent-laville.org",
+            "name": "Laurent Laville",
+            "role": "Lead"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Services_W3C_CSSValidator": "./"
+        }
+    },
+    "description": "More info available on: http://pear.php.net/package/Services_W3C_CSSValidator",
+    "include-path": [
+        "./"
+    ],
+    "license": "BSD",
+    "name": "pear/services_w3c_cssvalidator",
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Services_W3C_CSSValidator",
+        "source": "https://github.com/pear/Services_W3C_CSSValidator"
+    },
+    "type": "library",
+    "require": {
+        "pear/pear_exception": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
